@@ -1,0 +1,15 @@
+<div class="container mt-5" style="max-width: 400px;">
+	<h2>Login</h2>
+	<form (ngSubmit)="login()" #form="ngForm">
+		<div class="mb-3">
+			<label for="username" class="form-label">Usuário</label>
+			<input type="text" id="username" class="form-control" required [(ngModel)]="usuario.username" name="username">
+		</div>
+		<div class="mb-3">
+			<label for="password" class="form-label">Senha</label>
+			<input type="password" id="password" class="form-control" required [(ngModel)]="usuario.password" name="password">
+		</div>
+		<button class="btn btn-primary w-100" [disabled]="carregando">Entrar</button>
+	</form>
+	<div *ngIf="mensagem" class="alert alert-info mt-3">{{ mensagem }}</div>
+</div>
